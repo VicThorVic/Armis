@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    ports:
+      - "27017:27017"  # Expose MongoDB port
+    volumes:
+      - mongo_data:/data/db  # Persist MongoDB data
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js  # Mount initialization script
+
+  app:
+    build: .
+    container_name: armis-app
+    environment:
+      MONGO_URI: "mongodb://root:example@mongo:27017"  # MongoDB URI for connection
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongo  # Ensure MongoDB is up before the app starts
+
+volumes:
+  mongo_data:
+    driver: local

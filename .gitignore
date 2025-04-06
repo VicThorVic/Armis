@@ -1,0 +1,78 @@
+# Python
+*.pyc
+*.pyo
+__pycache__/
+*.pyd
+*.pdb
+*.egg
+*.egg-info/
+dist/
+build/
+*.whl
+*.log
+
+# Virtualenv
+.venv/
+env/
+venv/
+
+# pytest
+.cache/
+
+# MyPy
+.mypy_cache/
+
+# Pyre type checker
+.pyre/
+
+# VSCode
+.vscode/
+
+# JetBrains
+.idea/
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Environments
+.env
+.env.*
+
+# Python dependencies
+pip-selfcheck.json
+pip-log.txt
+
+# Coverage
+.coverage
+.coverage.*
+.cache/
+
+# Sphinx documentation
+docs/_build/
+
+# Docker
+*.dockerignore
+
+# Terraform
+*.tfstate
+*.tfstate.*
+
+# SQLite
+*.db
+
+# Logs
+logs/
+log/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Pytest
+*.coveragerc
+
+# IDEs and text editors
+*.swp
+*~
